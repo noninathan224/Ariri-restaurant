@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariri Restaurant & Bar | Nigerian Kitchen - Leicester</title>
+<meta name="description" content="Authentic Nigerian restaurant and bar at 29 Church Gate Street, Leicester. Order online, dine in, or book bulk catering for events across the UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--acc:#C4581A;--acc2:#D4952A;--bg:#0B0A08;--txt:#E8DDD0;--cream:#F5F0EB}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden}
+button,input,textarea,select{font-family:"DM Sans",sans-serif}
+
+/* ---- ANIMATIONS ---- */
+@keyframes wordReveal{from{opacity:0;transform:translateY(110%);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes floatPlate{0%,100%{transform:translateY(0) rotate(-2.5deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+@keyframes popIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.wr{display:inline-block;overflow:hidden;vertical-align:bottom;margin-right:.22em}
+.wri{display:inline-block;animation:wordReveal .72s cubic-bezier(.16,1,.3,1) both}
+.afu{animation:fadeUp .85s cubic-bezier(.16,1,.3,1) both}
+.asi{animation:scaleIn 1.1s cubic-bezier(.16,1,.3,1) both}
+.afl{animation:floatPlate 4.5s ease-in-out infinite}
+.aslide{animation:slideIn .3s ease both}
+.apop{animation:popIn .35s cubic-bezier(.16,1,.3,1) both}
+
+/* ---- SHARED NAV (order/owner pages) ---- */
+.anav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid rgba(232,221,208,.07);position:sticky;top:0;background:var(--bg);z-index:100}
+.abrand{font-size:19px;font-weight:600;letter-spacing:-.04em;color:var(--txt);cursor:pointer;background:none;border:none;font-family:"DM Sans",sans-serif}
+.abrand em{color:var(--acc2);font-style:normal}
+.anav-r{display:flex;gap:8px;align-items:center}
+.bo2{background:transparent;color:rgba(232,221,208,.55);border:1px solid rgba(232,221,208,.15);padding:8px 16px;border-radius:9px;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .15s;text-transform:uppercase;letter-spacing:.04em}
+.bo2:hover{background:rgba(232,221,208,.06)}
+.ba{background:var(--acc);color:#fff;border:none;padding:9px 18px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:opacity .15s;text-transform:uppercase;letter-spacing:.04em}
+.ba:hover{opacity:.85}
+.bwa{background:#25D366;color:#fff;border:none;padding:9px 18px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:opacity .15s;text-transform:uppercase;letter-spacing:.04em}
+.bwa:hover{opacity:.88}
+.bcnt{background:var(--acc);color:#fff;border-radius:50%;width:16px;height:16px;font-size:10px;display:inline-flex;align-items:center;justify-content:center;margin-left:2px;font-weight:700}
+
+/* ---- LANDING NAV ---- */
+.lnav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:clamp(.9rem,2vw,1.35rem) clamp(1.25rem,4vw,2.5rem);background:linear-gradient(to bottom,rgba(11,10,8,.92) 0%,transparent 100%);backdrop-filter:blur(10px)}
+.brand{font-size:clamp(1.4rem,3vw,1.85rem);font-weight:500;letter-spacing:-.05em;color:var(--txt);text-decoration:none;background:none;border:none;cursor:pointer;font-family:"DM Sans",sans-serif}
+.nav-links{display:flex;gap:clamp(1.25rem,3vw,2rem);align-items:center}
+.nl{background:none;border:none;cursor:pointer;color:rgba(232,221,208,.62);font-weight:500;font-size:clamp(.8rem,1.4vw,.95rem);letter-spacing:-.02em;transition:color .15s;text-decoration:none}
+.nl:hover{color:var(--txt)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.btn-c{display:inline-flex;align-items:center;gap:7px;background:var(--txt);color:#0C0C0C;border:none;cursor:pointer;font-weight:500;letter-spacing:-.03em;transition:all .2s;border-radius:8px;padding:9px 20px;font-size:.88rem}
+.btn-c:hover{background:#fff;transform:translateY(-1px)}
+.btn-h{background:rgba(232,221,208,.08);border:1px solid rgba(232,221,208,.15);color:var(--txt);cursor:pointer;border-radius:8px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-h:hover{background:rgba(232,221,208,.15)}
+.mob{position:fixed;inset:0;background:rgba(11,10,8,.97);z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1.75rem}
+.mob.open{display:flex}
+.mob-lnk{background:none;border:none;color:var(--txt);font-size:1.85rem;font-weight:400;letter-spacing:-.04em;cursor:pointer;text-decoration:none}
+.mob-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--txt);cursor:pointer}
+
+/* ---- HERO ---- */
+.hero{position:relative;min-height:100vh;padding:0 clamp(1.25rem,4vw,2.5rem);display:flex;flex-direction:column;overflow:hidden}
+.glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(90px)}
+.g1{width:65%;height:75%;top:-20%;right:-15%;background:radial-gradient(ellipse,rgba(196,88,26,.1) 0%,transparent 65%);animation:pulse 6s ease-in-out infinite}
+.g2{width:45%;height:45%;bottom:20%;left:-8%;background:radial-gradient(ellipse,rgba(212,149,42,.06) 0%,transparent 70%);animation:pulse 8s ease-in-out infinite .5s}
+.hero-inner{position:relative;z-index:5;padding-top:clamp(7rem,14vh,10rem);flex:1}
+h1.hl{font-size:clamp(3.5rem,10.5vw,9rem);font-weight:400;letter-spacing:-.055em;line-height:.97;max-width:clamp(300px,70vw,780px);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.dim{color:rgba(232,221,208,.28)}.bright{color:var(--txt)}
+.cta-row{display:flex;gap:clamp(1rem,3.5vw,3rem);align-items:flex-start;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--txt);color:#0C0C0C;border:none;cursor:pointer;font-weight:500;letter-spacing:-.03em;transition:all .2s;border-radius:8px;padding:14px clamp(22px,3vw,38px);font-size:clamp(.88rem,1.5vw,1.05rem)}
+.btn-p:hover{background:#fff;transform:translateY(-2px)}
+.btn-w{display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;border:none;border-radius:8px;padding:14px clamp(16px,2.5vw,26px);font-size:clamp(.82rem,1.3vw,.95rem);font-weight:500;cursor:pointer;letter-spacing:-.02em;transition:opacity .2s}
+.btn-w:hover{opacity:.88}
+.hero-sub{color:rgba(232,221,208,.4);max-width:270px;font-size:clamp(.8rem,1.2vw,.88rem);line-height:1.65;letter-spacing:-.02em;padding-top:6px}
+
+.plate-wrap{position:absolute;right:clamp(-5%,2vw,6%);top:50%;transform:translateY(-50%);z-index:3}
+.plate-sz{position:relative;width:clamp(220px,34vw,480px);height:clamp(220px,34vw,480px)}
+.pr{position:absolute;border-radius:50%;border:1px solid rgba(212,149,42,.15);pointer-events:none}
+.pm{position:absolute;inset:0;border-radius:50%;background:#100A04;border:1.5px solid rgba(196,88,26,.3);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pi1{position:absolute;inset:12%;border-radius:50%;border:1px solid rgba(212,149,42,.13)}
+.pi2{position:absolute;inset:25%;border-radius:50%;border:1px solid rgba(212,149,42,.08);background:rgba(196,88,26,.04)}
+.pg{position:absolute;bottom:0;left:0;right:0;height:60%;background:radial-gradient(ellipse at bottom,rgba(196,88,26,.14) 0%,transparent 70%)}
+.ptg{position:absolute;top:0;left:0;right:0;height:40%;background:radial-gradient(ellipse at top,rgba(212,149,42,.06) 0%,transparent 70%)}
+.pc{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:20%}
+.pi-ico{font-size:clamp(2.5rem,6vw,4.5rem);color:rgba(212,149,42,.45);line-height:1}
+.pi-lbl{font-size:clamp(.5rem,1vw,.68rem);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,221,208,.18)}
+
+.bstrip{position:relative;z-index:5;border-top:1px solid rgba(232,221,208,.07);padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,4vw,2.5rem);display:flex;align-items:center;gap:clamp(1rem,3vw,2.5rem);flex-wrap:wrap;margin-top:auto}
+.stn{font-size:clamp(1.1rem,2.8vw,1.8rem);font-weight:400;color:var(--acc2);letter-spacing:-.04em;line-height:1}
+.stl{font-size:clamp(.6rem,.95vw,.72rem);color:rgba(232,221,208,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.std{width:1px;height:28px;background:rgba(232,221,208,.1);flex-shrink:0}
+
+/* ---- STORY ---- */
+.story{background:var(--bg);padding:clamp(4rem,9vw,7rem) clamp(1.25rem,5vw,5rem);display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden}
+.sg{position:absolute;width:60%;height:60%;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(196,88,26,.06) 0%,transparent 65%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(196,88,26,.12);border-radius:999px;padding:5px 14px;margin-bottom:2rem;font-size:.72rem;font-weight:500;color:var(--acc);letter-spacing:.1em;text-transform:uppercase}
+.story-q{font-size:clamp(1.6rem,5vw,3.8rem);font-weight:400;letter-spacing:-.04em;line-height:1.15;max-width:720px;margin-bottom:2rem;color:var(--txt)}
+.sdiv{width:40px;height:1px;background:rgba(232,221,208,.2);margin:0 auto 2rem}
+.story-body{font-size:clamp(.88rem,1.5vw,1.02rem);color:rgba(232,221,208,.45);max-width:520px;line-height:1.85;letter-spacing:-.02em;margin-bottom:2.5rem}
+.story-dets{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+.story-det{display:flex;align-items:center;gap:.6rem;font-size:clamp(.75rem,1.2vw,.85rem);color:rgba(232,221,208,.38);letter-spacing:-.01em}
+.story-det i{font-size:1rem;color:var(--acc);opacity:.65}
+
+/* ---- DISH ART (illustrated, since no photo generation available) ---- */
+.dish-art{position:relative;overflow:hidden;border-radius:inherit;display:flex;align-items:center;justify-content:center}
+.dish-blob{position:absolute;border-radius:50%;filter:blur(16px);opacity:.55}
+.dish-shine{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.08) 0%,transparent 45%)}
+.dish-ico{position:relative;z-index:2;opacity:.9}
+
+/* ---- FULL MENU (landing preview) ---- */
+.menu-sec{background:var(--cream);padding:clamp(3rem,8vw,6rem) clamp(1.25rem,5vw,4rem)}
+.sec-eyebrow{font-size:.72rem;font-weight:500;color:rgba(12,12,12,.38);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
+.sec-h{font-size:clamp(2rem,6vw,4rem);font-weight:400;color:#0C0C0C;letter-spacing:-.05em;line-height:1;margin-bottom:2.5rem}
+.menu-grid-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:rgba(12,12,12,.08);margin-bottom:1.5rem}
+.mcb{background:var(--cream);padding:clamp(1.25rem,2.5vw,1.85rem)}
+.mcb-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;padding-bottom:.9rem;border-bottom:1px solid rgba(12,12,12,.1)}
+.mcb-name{font-size:clamp(.95rem,1.8vw,1.15rem);font-weight:500;color:#0C0C0C;letter-spacing:-.03em}
+.mcb-cnt{font-size:.7rem;color:rgba(12,12,12,.3);letter-spacing:.06em;text-transform:uppercase}
+.dr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(12,12,12,.06)}
+.dr:last-child{border-bottom:none}
+.dn{font-size:clamp(.8rem,1.3vw,.9rem);color:#0C0C0C;letter-spacing:-.02em}
+.dp{font-size:.8rem;font-weight:500;color:rgba(12,12,12,.45);white-space:nowrap;margin-left:.75rem}
+.dtag{font-size:.62rem;padding:2px 6px;border-radius:999px;margin-left:6px;font-weight:600;vertical-align:middle}
+.tpop{background:rgba(26,92,46,.12);color:#1A5C2E}
+.tso{background:rgba(196,88,26,.12);color:var(--acc)}
+.menu-note{font-size:.82rem;color:rgba(12,12,12,.38);font-style:italic;letter-spacing:-.01em}
+
+/* ---- WHY ---- */
+.why-sec{background:var(--bg);padding:clamp(3rem,8vw,6rem) clamp(1.25rem,5vw,4rem)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(232,221,208,.06);margin-top:2.5rem}
+.wc{background:var(--bg);padding:clamp(1.25rem,2.5vw,2rem)}
+.wc-ico{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.wc-ico i{font-size:1.2rem}
+.wc-h{font-size:clamp(.95rem,1.7vw,1.1rem);font-weight:500;color:var(--txt);letter-spacing:-.03em;margin-bottom:.55rem}
+.wc-p{font-size:clamp(.78rem,1.2vw,.85rem);color:rgba(232,221,208,.38);line-height:1.65;letter-spacing:-.01em}
+
+/* ---- BOOKING (landing section) ---- */
+.book-sec{background:#0C0C0C;padding:clamp(3rem,8vw,6rem) clamp(1.25rem,5vw,4rem);position:relative;overflow:hidden}
+.book-glow{position:absolute;top:-20%;right:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(196,88,26,.08) 0%,transparent 65%);pointer-events:none}
+.book-inner{max-width:920px;margin:0 auto;position:relative;z-index:2}
+.book-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start;margin-bottom:2.5rem}
+.book-h{font-size:clamp(1.8rem,5vw,3.5rem);font-weight:400;color:var(--txt);letter-spacing:-.05em;line-height:1;margin-bottom:1rem}
+.book-sub{font-size:clamp(.82rem,1.3vw,.92rem);color:rgba(232,221,208,.42);line-height:1.75;letter-spacing:-.02em;margin-bottom:1.5rem}
+.check-item{display:flex;align-items:center;gap:.65rem;padding:8px 0;font-size:.88rem;color:rgba(232,221,208,.45);letter-spacing:-.02em}
+.check-item i{color:#5DCE96;font-size:1rem;flex-shrink:0}
+.form-card{background:rgba(232,221,208,.03);border:1px solid rgba(232,221,208,.1);border-radius:20px;padding:clamp(1.5rem,3.5vw,2.25rem)}
+.fg{margin-bottom:1.35rem}
+.fl{display:block;font-size:.68rem;font-weight:500;color:rgba(232,221,208,.38);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+.fi-inp{width:100%;padding:11px 14px;border:1px solid rgba(232,221,208,.12);border-radius:10px;font-size:.88rem;color:var(--txt);background:rgba(232,221,208,.04);transition:border-color .2s;letter-spacing:-.02em;appearance:none}
+.fi-inp:focus{outline:none;border-color:var(--acc)}
+.fi-inp::placeholder{color:rgba(232,221,208,.22)}
+textarea.fi-inp{min-height:85px;resize:vertical}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.evt-pills,.gst-pills{display:flex;flex-wrap:wrap;gap:7px}
+.ep{padding:7px 14px;border-radius:999px;border:1px solid rgba(232,221,208,.14);background:transparent;color:rgba(232,221,208,.5);font-size:.8rem;cursor:pointer;transition:all .18s;letter-spacing:-.01em}
+.ep:hover{border-color:rgba(232,221,208,.3);color:var(--txt)}
+.ep.on{background:rgba(196,88,26,.16);border-color:var(--acc);color:var(--acc)}
+.gp{padding:6px 13px;border-radius:999px;border:1px solid rgba(232,221,208,.12);background:transparent;color:rgba(232,221,208,.45);font-size:.78rem;cursor:pointer;transition:all .18s;letter-spacing:-.01em}
+.gp:hover{border-color:rgba(232,221,208,.28);color:var(--txt)}
+.gp.on{background:rgba(212,149,42,.14);border-color:var(--acc2);color:var(--acc2)}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.mci{display:flex;align-items:center;gap:9px;padding:10px 11px;border:1px solid rgba(232,221,208,.1);border-radius:10px;cursor:pointer;transition:all .18s}
+.mci:hover{border-color:rgba(232,221,208,.24);background:rgba(232,221,208,.02)}
+.mci.on{border-color:var(--acc);background:rgba(196,88,26,.08)}
+.mci-ico{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mci-ico i{font-size:.9rem;color:rgba(232,221,208,.65)}
+.mci-name{font-size:.78rem;font-weight:500;color:rgba(232,221,208,.65);letter-spacing:-.02em;flex:1;min-width:0}
+.mci-p{font-size:.68rem;color:rgba(232,221,208,.25);letter-spacing:-.01em}
+.mci-chk{width:16px;height:16px;border-radius:4px;border:1px solid rgba(232,221,208,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s}
+.mci.on .mci-chk{background:var(--acc);border-color:var(--acc)}
+.mci-chk i{font-size:.68rem;color:#fff;display:none}
+.mci.on .mci-chk i{display:block}
+.btn-book{width:100%;padding:16px;background:var(--acc);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:500;cursor:pointer;letter-spacing:-.02em;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:1.25rem}
+.btn-book:hover{background:#d2601f;transform:translateY(-1px)}
+.form-note{text-align:center;font-size:.72rem;color:rgba(232,221,208,.25);margin-top:.65rem;letter-spacing:-.01em}
+.form-ok{display:none;text-align:center;padding:3rem 1rem}
+.form-ok i{font-size:3rem;color:#5DCE96;display:block;margin-bottom:.9rem}
+.form-ok h3{font-size:1.2rem;font-weight:400;color:var(--txt);letter-spacing:-.04em;margin-bottom:.5rem}
+.form-ok p{font-size:.85rem;color:rgba(232,221,208,.38);line-height:1.6}
+
+/* ---- FOOTER ---- */
+footer{background:#070605;border-top:1px solid rgba(232,221,208,.06);padding:clamp(2.5rem,6vw,4rem) clamp(1.25rem,5vw,4rem)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;max-width:900px;margin:0 auto}
+.fbrand{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;color:var(--txt);letter-spacing:-.05em;margin-bottom:.85rem}
+.fdesc{font-size:clamp(.76rem,1.2vw,.85rem);color:rgba(232,221,208,.35);line-height:1.7;max-width:250px;margin-bottom:1.5rem;letter-spacing:-.01em}
+.fcontacts{display:flex;flex-direction:column;gap:.55rem}
+.fc-item{display:flex;align-items:center;gap:.6rem;font-size:.83rem;color:rgba(232,221,208,.4);text-decoration:none;letter-spacing:-.01em;transition:color .15s;background:none;border:none;cursor:pointer}
+.fc-item:hover{color:var(--txt)}
+.fc-item i{font-size:.95rem;color:var(--acc);opacity:.65;flex-shrink:0}
+.foot-col h4{font-size:.68rem;font-weight:500;color:rgba(232,221,208,.28);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem}
+.flinks{display:flex;flex-direction:column;gap:.55rem}
+.flnk{font-size:.83rem;color:rgba(232,221,208,.4);text-decoration:none;letter-spacing:-.01em;transition:color .15s;background:none;border:none;cursor:pointer;padding:0;text-align:left}
+.flnk:hover{color:var(--txt)}
+.foot-btm{border-top:1px solid rgba(232,221,208,.05);margin-top:2.5rem;padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;max-width:900px;margin-left:auto;margin-right:auto}
+.fcopy{font-size:.7rem;color:rgba(232,221,208,.22);letter-spacing:-.01em}
+.finsta{display:inline-flex;align-items:center;gap:5px;font-size:.7rem;color:rgba(232,221,208,.32);text-decoration:none;transition:color .15s}
+.finsta:hover{color:var(--txt)}
+
+/* ================= ORDER APP ================= */
+.app-wrap{background:var(--bg);min-height:100vh}
+.cats{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.1rem;padding:1rem 1.5rem 0}
+.cb{border:1px solid rgba(232,221,208,.13);background:transparent;padding:5px 13px;border-radius:999px;font-size:12px;cursor:pointer;color:rgba(232,221,208,.55);transition:all .15s}
+.cb.on{background:rgba(196,88,26,.14);border-color:var(--acc);color:var(--acc);font-weight:600}
+.cb:hover:not(.on){background:rgba(232,221,208,.05)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:10px;padding:0 1.5rem 1.25rem}
+.mc{background:#111;border:1px solid rgba(232,221,208,.09);border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s}
+.mc:hover:not(.ua){border-color:rgba(232,221,208,.26);transform:translateY(-2px)}
+.mc.ua{opacity:.4;cursor:not-allowed}
+.mc-art{height:96px}
+.mc-body{padding:.85rem}
+.mc-name{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:3px;text-transform:uppercase;letter-spacing:.03em}
+.mc-desc{font-size:11px;color:rgba(232,221,208,.4);margin-bottom:7px;line-height:1.45}
+.mc-foot{display:flex;align-items:center;justify-content:space-between}
+.mc-price{font-size:13px;font-weight:700;color:var(--acc2)}
+.ab{font-size:10px;padding:2px 7px;border-radius:999px;font-weight:600}
+.ab.y{background:rgba(26,130,46,.2);color:#5DCE96}
+.ab.n{background:rgba(196,88,26,.18);color:#E8855A}
+.bulk-banner{border:1px solid rgba(196,88,26,.28);border-radius:15px;padding:1.1rem;background:rgba(196,88,26,.06);margin:0 1.5rem 1.5rem}
+
+.panel{background:#111;border:1px solid rgba(232,221,208,.09);border-radius:18px;padding:1.5rem;margin:1rem 1.25rem}
+.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem}
+.pt{font-size:15px;font-weight:700;color:var(--txt);text-transform:uppercase;letter-spacing:.05em}
+.xb{border:none;background:none;cursor:pointer;color:rgba(232,221,208,.45);padding:4px;font-size:17px;display:flex;align-items:center}
+.pimg{width:100%;height:130px;border-radius:12px;overflow:hidden;margin-bottom:1rem}
+.sec{margin-bottom:1rem}
+.sl{font-size:11px;color:rgba(232,221,208,.4);font-weight:600;margin-bottom:6px;display:block;text-transform:uppercase;letter-spacing:.07em}
+.trow{display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid rgba(232,221,208,.05)}
+.trow:last-child{border-bottom:none}
+.trow label{font-size:12px;color:var(--txt);flex:1;cursor:pointer}
+.trow input{accent-color:var(--acc);width:13px;height:13px;cursor:pointer}
+.arow{display:flex;align-items:center;padding:5px 0;border-bottom:1px solid rgba(232,221,208,.05)}
+.arow:last-child{border-bottom:none}
+.arow label{font-size:12px;color:var(--txt);flex:1;cursor:pointer}
+.arow-p{font-size:10px;color:rgba(232,221,208,.38);margin-right:7px}
+.qrow{display:flex;align-items:center;gap:13px}
+.qb{width:29px;height:29px;border:1px solid rgba(232,221,208,.18);background:transparent;border-radius:8px;font-size:17px;cursor:pointer;color:var(--txt);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.qb:hover{background:rgba(232,221,208,.07)}
+.qv{font-size:16px;font-weight:700;color:var(--txt);min-width:20px;text-align:center}
+.ci{padding:8px 0;border-bottom:1px solid rgba(232,221,208,.06);display:flex;align-items:flex-start;gap:9px}
+.ci:last-child{border-bottom:none}
+.ci-inf{flex:1}
+.ci-name{font-size:12px;font-weight:700;color:var(--txt);text-transform:uppercase}
+.ci-mod{font-size:11px;color:rgba(232,221,208,.35);margin-top:2px;line-height:1.4}
+.ci-price{font-size:12px;font-weight:700;color:var(--acc2);white-space:nowrap}
+.tot{display:flex;justify-content:space-between;padding:8px 0;font-weight:700;font-size:14px;color:var(--txt);border-top:1px solid rgba(232,221,208,.1);margin-top:4px}
+.po{border:1px solid rgba(232,221,208,.11);border-radius:11px;padding:10px 13px;margin-bottom:6px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s}
+.po:hover{background:rgba(232,221,208,.04)}
+.po.sel{border-color:var(--acc);background:rgba(196,88,26,.07)}
+.po-ico{font-size:19px;color:var(--acc2)}
+.po-name{font-size:12px;font-weight:700;color:var(--txt);text-transform:uppercase}
+.po-sub{font-size:11px;color:rgba(232,221,208,.38)}
+.ot-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:.9rem}
+.ot{border:1px solid rgba(232,221,208,.11);border-radius:11px;padding:11px 8px;cursor:pointer;text-align:center;transition:all .15s}
+.ot:hover{background:rgba(232,221,208,.04)}
+.ot.sel{border-color:var(--acc);background:rgba(196,88,26,.07)}
+.ot i{font-size:19px;color:var(--acc2);display:block;margin-bottom:4px}
+.ot-name{font-size:11px;font-weight:700;color:var(--txt);text-transform:uppercase;letter-spacing:.03em}
+.ot-sub{font-size:10px;color:rgba(232,221,208,.35);margin-top:2px}
+.inp{width:100%;padding:7px 10px;border:1px solid rgba(232,221,208,.13);border-radius:9px;font-size:12px;color:var(--txt);background:rgba(232,221,208,.04);box-sizing:border-box}
+.inp:focus{outline:none;border-color:var(--acc)}
+textarea.inp{min-height:70px;resize:vertical}
+.divider{height:1px;background:rgba(232,221,208,.07);margin:1rem 0}
+.succ{text-align:center;padding:4rem 1rem}
+.succ-ico{font-size:52px;color:#5DCE96;display:block;margin-bottom:1rem}
+.succ-h{font-size:20px;font-weight:700;color:var(--txt);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
+.succ-s{font-size:12px;color:rgba(232,221,208,.42);margin-bottom:1.5rem;line-height:1.7}
+.apbtn{background:var(--txt);color:#0C0C0C;border:none;border-radius:11px;padding:13px;width:100%;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:.9rem;transition:opacity .15s;text-transform:uppercase;letter-spacing:.06em}
+.apbtn:hover{opacity:.85}
+
+/* ================= OWNER APP ================= */
+.otabs{display:flex;gap:7px;margin-bottom:1.25rem;padding:1rem 1.5rem 0;flex-wrap:wrap}
+.otb{border:1px solid rgba(232,221,208,.11);background:transparent;padding:6px 14px;border-radius:9px;font-size:12px;cursor:pointer;color:rgba(232,221,208,.45);transition:all .15s;text-transform:uppercase;letter-spacing:.04em;font-weight:500}
+.otb.on{background:rgba(196,88,26,.14);border-color:var(--acc);color:var(--acc)}
+.mr{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(232,221,208,.06)}
+.mr:last-child{border-bottom:none}
+.mr-ico{width:36px;height:36px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.mr-inf{flex:1}
+.mr-name{font-size:12px;font-weight:700;color:var(--txt);text-transform:uppercase}
+.mr-sub{font-size:10px;color:rgba(232,221,208,.35)}
+.tsw{position:relative;width:36px;height:20px;display:inline-block;flex-shrink:0}
+.tsw input{opacity:0;width:0;height:0;position:absolute}
+.tsl{position:absolute;inset:0;background:rgba(232,221,208,.14);border-radius:20px;cursor:pointer;transition:.2s}
+.tsw input:checked+.tsl{background:var(--acc)}
+.tsl:before{content:"";position:absolute;width:14px;height:14px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.2s}
+.tsw input:checked+.tsl:before{transform:translateX(16px)}
+.etag{border:1px solid rgba(232,221,208,.11);background:transparent;padding:4px 12px;border-radius:999px;font-size:11px;cursor:pointer;color:rgba(232,221,208,.45);transition:all .15s;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em}
+.etag.on{background:rgba(196,88,26,.14);border-color:var(--acc);color:var(--acc);font-weight:600}
+.cat-h{font-size:10px;font-weight:600;color:rgba(232,221,208,.3);letter-spacing:.1em;text-transform:uppercase;margin:.85rem 0 .4rem}
+.boc{background:rgba(232,221,208,.03);border:1px solid rgba(232,221,208,.07);border-radius:13px;padding:.9rem;margin-bottom:7px}
+.boc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.boc-id{font-size:11px;font-weight:700;color:var(--acc2);text-transform:uppercase}
+.boc-s{font-size:9px;font-weight:700;text-transform:uppercase;padding:2px 7px;border-radius:999px}
+.boc-s.c{background:rgba(26,130,46,.2);color:#5DCE96}
+.boc-s.p{background:rgba(212,149,42,.18);color:var(--acc2)}
+.boc-city{font-size:13px;font-weight:700;color:var(--txt);text-transform:uppercase}
+.boc-det{font-size:10px;color:rgba(232,221,208,.35);margin-top:3px;line-height:1.5}
+.toast{background:rgba(26,130,46,.15);color:#5DCE96;padding:10px 13px;border-radius:11px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px;margin-top:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.owner-note{font-size:11px;color:rgba(232,221,208,.3);font-style:italic;margin-top:1rem;line-height:1.6}
+
+/* RESPONSIVE */
+@media(max-width:720px){
+  .nav-links{display:none}
+  .plate-wrap{display:none}
+  .book-cols{grid-template-columns:1fr}
+  .frow,.mc-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-btm{flex-direction:column;align-items:flex-start}
+  .why-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:440px){
+  .why-grid{grid-template-columns:1fr}
+  .bstrip .std:nth-child(6),.bstrip div:nth-child(7){display:none}
+  .ot-row{grid-template-columns:1fr}
+}
+
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var MENU_DATA=[{"id": 1, "n": "Suya", "cat": "Small Chops", "p": 7.0, "d": "Spiced beef skewers grilled over open flame, onions, tomatoes & suya pepper", "avail": true, "rm": ["onions", "tomatoes", "extra spice"], "ao": [{"n": "Extra skewer", "p": 3}, {"n": "Suya pepper side", "p": 0.5}]}, {"id": 2, "n": "Spicy Gizzard", "cat": "Small Chops", "p": 8.0, "d": "Slow-cooked peppered gizzard, bold and full of flavour", "avail": true, "rm": ["extra pepper"], "ao": [{"n": "Extra portion", "p": 3}]}, {"id": 3, "n": "Gizdodo", "cat": "Small Chops", "p": 9.0, "d": "Gizzard and fried plantain in rich pepper sauce", "avail": true, "rm": ["extra pepper", "plantain"], "ao": [{"n": "Extra portion", "p": 3.5}]}, {"id": 4, "n": "Meat Pie", "cat": "Small Chops", "p": 5.5, "d": "Golden pastry filled with spiced minced beef and vegetables", "avail": true, "rm": [], "ao": [{"n": "Extra pie", "p": 5.5}]}, {"id": 5, "n": "Ewa Agoyin", "cat": "Small Chops", "p": 7.5, "d": "Mashed beans in rich palm oil and caramelised onion sauce", "avail": true, "rm": ["palm oil"], "ao": [{"n": "Extra bread", "p": 1}]}, {"id": 6, "n": "Puff Puff", "cat": "Small Chops", "p": 5.0, "d": "Soft deep-fried dough balls, lightly sweetened", "avail": true, "rm": [], "ao": [{"n": "Honey drizzle", "p": 0.5}]}, {"id": 7, "n": "Party Jollof Rice", "cat": "Rice & Carbs", "p": 14.0, "d": "Smoky firewood jollof slow-cooked to perfection, served with protein of choice", "avail": true, "rm": ["bay leaf", "crayfish"], "ao": [{"n": "Extra chicken", "p": 4}, {"n": "Extra portion", "p": 4.5}, {"n": "Add plantain", "p": 2}]}, {"id": 8, "n": "Fried Rice", "cat": "Rice & Carbs", "p": 13.0, "d": "Nigerian fried rice with mixed vegetables and protein of choice", "avail": true, "rm": ["carrots", "green beans"], "ao": [{"n": "Extra protein", "p": 4}, {"n": "Extra portion", "p": 4}]}, {"id": 9, "n": "Native Rice & Ofada Sauce", "cat": "Rice & Carbs", "p": 13.5, "d": "Local unpolished rice in rich palm oil ofada stew with assorted meats", "avail": true, "rm": ["boiled egg", "offal"], "ao": [{"n": "Extra stew", "p": 2}]}, {"id": 10, "n": "Coconut Rice", "cat": "Rice & Carbs", "p": 12.5, "d": "Fragrant rice slow-cooked in coconut milk with prawns and protein of choice", "avail": true, "rm": ["prawns"], "ao": [{"n": "Extra protein", "p": 4}]}, {"id": 11, "n": "Asun Rice", "cat": "Rice & Carbs", "p": 14.0, "d": "Smoky jollof topped with peppered goat meat, a fan favourite", "avail": false, "rm": [], "ao": [{"n": "Extra asun", "p": 4}]}, {"id": 12, "n": "White Rice & Stew", "cat": "Rice & Carbs", "p": 11.0, "d": "Fluffy steamed white rice with rich tomato stew and protein of choice", "avail": true, "rm": ["crayfish"], "ao": [{"n": "Extra protein", "p": 4}, {"n": "Extra stew", "p": 2}]}, {"id": 13, "n": "Egusi Soup", "cat": "Soups", "p": 13.0, "d": "Ground melon seeds, leafy greens, assorted meat & stockfish", "avail": true, "rm": ["stockfish", "crayfish"], "ao": [{"n": "Extra meat", "p": 3.5}, {"n": "Extra swallow", "p": 2}]}, {"id": 14, "n": "Efo Riro", "cat": "Soups", "p": 12.5, "d": "Rich spinach stew, red peppers, assorted meat & smoked fish", "avail": true, "rm": ["smoked fish", "crayfish"], "ao": [{"n": "Extra meat", "p": 3.5}, {"n": "Extra swallow", "p": 2}]}, {"id": 15, "n": "Oha Soup", "cat": "Soups", "p": 13.5, "d": "Oha leaves in a cocoyam base with assorted meats and crayfish", "avail": true, "rm": ["crayfish"], "ao": [{"n": "Extra meat", "p": 3.5}, {"n": "Extra swallow", "p": 2}]}, {"id": 16, "n": "Ofe Nsala", "cat": "Soups", "p": 14.0, "d": "Light aromatic Igbo white soup with catfish and uziza leaves", "avail": true, "rm": ["uziza"], "ao": [{"n": "Extra fish", "p": 4}, {"n": "Extra swallow", "p": 2}]}, {"id": 17, "n": "Ogbono Soup", "cat": "Soups", "p": 12.5, "d": "Thickened bush mango soup with assorted meat and leafy greens", "avail": true, "rm": ["okazi"], "ao": [{"n": "Extra meat", "p": 3.5}, {"n": "Extra swallow", "p": 2}]}, {"id": 18, "n": "Banga Soup", "cat": "Soups", "p": 13.5, "d": "Delta-style palm fruit soup with assorted meats and spices", "avail": true, "rm": [], "ao": [{"n": "Extra protein", "p": 3.5}]}, {"id": 19, "n": "Fisherman Soup", "cat": "Soups", "p": 14.0, "d": "Rich seafood soup with catfish, prawns and assorted fish", "avail": true, "rm": ["prawns"], "ao": [{"n": "Extra fish", "p": 4}]}, {"id": 20, "n": "Bitterleaf Soup", "cat": "Soups", "p": 13.0, "d": "Bitterleaf with assorted meat, oilbean seeds and rich palm oil", "avail": true, "rm": ["oilbean"], "ao": [{"n": "Extra meat", "p": 3.5}]}, {"id": 21, "n": "Fish Platter", "cat": "Mains & Platters", "p": 18.0, "d": "Whole grilled or fried fish with sauce, plantain and sides", "avail": true, "rm": ["extra pepper"], "ao": [{"n": "Add extra stew", "p": 2}, {"n": "Extra fish", "p": 8}]}, {"id": 22, "n": "Goat Pepper Soup", "cat": "Mains & Platters", "p": 14.5, "d": "Light aromatic broth, tender goat meat, uziza and traditional spices", "avail": true, "rm": ["uziza", "utazi"], "ao": [{"n": "Extra meat", "p": 4}, {"n": "Add yam", "p": 2.5}]}, {"id": 23, "n": "Catfish Pepper Soup", "cat": "Mains & Platters", "p": 16.0, "d": "Fresh catfish in a deeply spiced aromatic broth", "avail": true, "rm": ["uziza"], "ao": [{"n": "Extra fish", "p": 5}, {"n": "Add yam", "p": 2.5}]}, {"id": 24, "n": "Ofeakwu Stew & Rice", "cat": "Mains & Platters", "p": 13.0, "d": "Rich bitterleaf stew with oilbean, served on white rice", "avail": true, "rm": ["ukpaka"], "ao": [{"n": "Extra stew", "p": 2}, {"n": "Extra rice", "p": 2}]}, {"id": 25, "n": "Beans & Plantain", "cat": "Mains & Platters", "p": 10.0, "d": "Beans porridge with smoked fish and sweet fried plantain", "avail": true, "rm": ["smoked fish"], "ao": [{"n": "Extra plantain", "p": 2}]}, {"id": 26, "n": "Fried Yam & Sauce", "cat": "Mains & Platters", "p": 9.0, "d": "Crispy fried yam with peppered egg sauce or rich tomato stew", "avail": true, "rm": ["boiled egg"], "ao": [{"n": "Extra yam", "p": 3}, {"n": "Add protein", "p": 4}]}, {"id": 27, "n": "Pounded Yam", "cat": "Sides & Swallows", "p": 3.5, "d": "Smooth, stretchy pounded yam, perfect with any soup", "avail": true, "rm": [], "ao": [{"n": "Extra portion", "p": 2}]}, {"id": 28, "n": "Eba", "cat": "Sides & Swallows", "p": 3.0, "d": "Garri swallow, light and versatile", "avail": true, "rm": [], "ao": [{"n": "Extra portion", "p": 1.5}]}, {"id": 29, "n": "Fufu", "cat": "Sides & Swallows", "p": 3.0, "d": "Smooth cassava swallow", "avail": true, "rm": [], "ao": [{"n": "Extra portion", "p": 1.5}]}, {"id": 30, "n": "Semo", "cat": "Sides & Swallows", "p": 3.0, "d": "Semolina swallow, soft and filling", "avail": true, "rm": [], "ao": [{"n": "Extra portion", "p": 1.5}]}, {"id": 31, "n": "Fried Plantain (Dodo)", "cat": "Sides & Swallows", "p": 3.5, "d": "Ripe plantain, fried golden and caramelised", "avail": true, "rm": [], "ao": [{"n": "Extra portion", "p": 1.5}]}, {"id": 32, "n": "Moi Moi", "cat": "Sides & Swallows", "p": 4.0, "d": "Steamed bean pudding with egg, smoked fish and peppers", "avail": true, "rm": ["egg", "smoked fish"], "ao": []}, {"id": 33, "n": "Fruity Zobo", "cat": "Drinks", "p": 4.5, "d": "Ariri's signature bottled hibiscus drink, fruity and refreshing", "avail": true, "rm": [], "ao": [{"n": "Extra bottle", "p": 4.5}]}, {"id": 34, "n": "Chapman", "cat": "Drinks", "p": 4.0, "d": "Fanta, Sprite, Angostura bitters, cucumber and cherries", "avail": true, "rm": ["bitters", "cherries"], "ao": []}, {"id": 35, "n": "Malt Drink", "cat": "Drinks", "p": 3.0, "d": "Cold malt, the classic Nigerian soft drink", "avail": true, "rm": [], "ao": []}, {"id": 36, "n": "Palm Wine", "cat": "Drinks", "p": 5.0, "d": "Fresh tapped palm wine, slightly sweet and naturally fermented", "avail": true, "rm": [], "ao": []}];
+var CATEGORY_ART={"Small Chops": {"ico": "ti-meat", "c1": "#C4581A", "c2": "#3A1400", "c3": "#F5C4A0"}, "Rice & Carbs": {"ico": "ti-bowl", "c1": "#D4952A", "c2": "#5A2408", "c3": "#F5D9A0"}, "Soups": {"ico": "ti-soup", "c1": "#8A9C3A", "c2": "#1A2A08", "c3": "#D8E4A0"}, "Mains & Platters": {"ico": "ti-fish", "c1": "#C4581A", "c2": "#2A0A0A", "c3": "#F0B080"}, "Sides & Swallows": {"ico": "ti-circle", "c1": "#D4952A", "c2": "#3A2A10", "c3": "#F0DFA0"}, "Drinks": {"ico": "ti-glass-full", "c1": "#B0466A", "c2": "#2A0A18", "c3": "#F0A8C0"}};
+var WHY_DATA=[{"ico": "ti-flame", "bg": "rgba(196,88,26,.15)", "tc": "#C4581A", "h": "Firewood jollof", "p": "Our party jollof is slow-cooked over an open flame. You can taste the difference in every bite."}, {"ico": "ti-users", "bg": "rgba(26,92,46,.15)", "tc": "#1A5C2E", "h": "Family-sized portions", "p": "From a small gathering to a 500-person wedding, we scale without compromising quality."}, {"ico": "ti-truck", "bg": "rgba(212,149,42,.15)", "tc": "#D4952A", "h": "UK-wide delivery", "p": "We deliver to Birmingham, London, Manchester, Nottingham and beyond. Just tell us where."}, {"ico": "ti-leaf", "bg": "rgba(65,36,2,.6)", "tc": "#D4952A", "h": "Traditional recipes", "p": "Every dish is made from authentic Igbo and Nigerian recipes, passed down through generations."}];
+var MENU_OPTIONS=[{"ico": "ti-meat", "bg": "#2A1400", "n": "Small Chops Package", "p": "Suya, gizzard, puff puff"}, {"ico": "ti-bowl", "bg": "#3A1205", "n": "Rice & Carbs Package", "p": "Jollof, fried rice, native rice"}, {"ico": "ti-soup", "bg": "#0D2A08", "n": "Soup & Swallow Package", "p": "Any soups with swallow of choice"}, {"ico": "ti-fish", "bg": "#0A0A1A", "n": "Fish Platter", "p": "Whole grilled or fried fish"}, {"ico": "ti-glass-full", "bg": "#1A0012", "n": "Drinks Package", "p": "Zobo, Chapman, malt, water"}, {"ico": "ti-tools-kitchen", "bg": "#1A1000", "n": "Full Buffet", "p": "All categories, custom quantities"}];
+var BULK_SEED=[{"id": "#BO-001", "city": "Birmingham", "event": "Birthday party", "date": "15 Jul 2026", "guests": "51-100", "items": "Party Jollof x3 trays, Egusi x2, Pounded Yam x5", "status": "confirmed"}, {"id": "#BO-002", "city": "London", "event": "Wedding", "date": "3 Aug 2026", "guests": "200+", "items": "Full buffet package - all categories", "status": "pending"}, {"id": "#BO-003", "city": "Manchester", "event": "Corporate event", "date": "28 Jul 2026", "guests": "20-50", "items": "Jollof x2, Fried Rice x1, Assorted sides", "status": "confirmed"}];
+
+var CATS = ["All","Small Chops","Rice & Carbs","Soups","Mains & Platters","Sides & Swallows","Drinks"];
+var WA_NUMBER = "447405251346";
+
+var S = {
+  page: "landing",
+  cat: "All",
+  cart: [],
+  selId: null,
+  custRm: {},
+  custAo: {},
+  custQty: 1,
+  orderType: "dine-in",
+  payMethod: null,
+  checkStep: "review",
+  oview: "menu",
+  ownerAuth: false,
+  ownerTab: "menu",
+  emailType: "promotion",
+  emailSent: false,
+  evtType: "Birthday party",
+  guestRange: "20-50",
+  checkedMenus: {},
+  bulkBookings: BULK_SEED.slice(),
+  menu: MENU_DATA.map(function(m){ return Object.assign({}, m); })
+};
+
+function f(n){ return "£" + n.toFixed(2); }
+function itm(id){ return S.menu.filter(function(m){ return m.id === id; })[0]; }
+function cTotal(){ var t=0; S.cart.forEach(function(c){ t += c.total; }); return t; }
+function cCount(){ var t=0; S.cart.forEach(function(c){ t += c.qty; }); return t; }
+function esc(s){ return s.replace(/[^a-zA-Z0-9]/g, ""); }
+
+/* ---- DISH ART (illustrated placeholder since no image-gen tool available) ---- */
+function dishArt(cat, seed, h){
+  var art = CATEGORY_ART[cat] || CATEGORY_ART["Rice & Carbs"];
+  var rot = ((seed % 5) - 2) * 6;
+  var bg = "radial-gradient(circle at 30% 30%," + art.c1 + "22 0%, " + art.c2 + " 70%)";
+  return '<div class="dish-art" style="height:' + h + 'px;background:' + bg + '">'
+    + '<div class="dish-blob" style="width:60%;height:60%;top:-10%;left:-10%;background:' + art.c1 + '"></div>'
+    + '<div class="dish-blob" style="width:45%;height:45%;bottom:-8%;right:-8%;background:' + art.c3 + '"></div>'
+    + '<div class="dish-shine"></div>'
+    + '<i class="ti ' + art.ico + ' dish-ico" style="font-size:' + Math.round(h*0.38) + 'px;color:rgba(255,255,255,.55);transform:rotate(' + rot + 'deg)"></i>'
+    + '</div>';
+}
+
+/* ================= RENDER DISPATCH ================= */
+function render(){
+  var root = document.getElementById("root");
+  if (S.page === "landing"){
+    root.innerHTML = landingHTML();
+    initLanding();
+  } else if (S.page === "order"){
+    root.innerHTML = '<div class="app-wrap">' + orderNav() + orderBody() + '</div>';
+  } else if (S.page === "owner"){
+    root.innerHTML = '<div class="app-wrap">' + ownerNav() + ownerBody() + '</div>';
+  }
+}
+
+/* ================= LANDING PAGE ================= */
+function landingHTML(){
+  var menuGridHtml = "";
+  MENU_DATA.forEach(function(){}); // noop to keep structure consistent
+  var catsSeen = [];
+  var byCat = {};
+  MENU_DATA.forEach(function(item){
+    if (!byCat[item.cat]) { byCat[item.cat] = []; catsSeen.push(item.cat); }
+    byCat[item.cat].push(item);
+  });
+  catsSeen.forEach(function(cat){
+    var items = byCat[cat];
+    var rows = items.map(function(d){
+      var tag = "";
+      if (!d.avail) tag = '<span class="dtag tso">Sold out</span>';
+      return '<div class="dr"><span class="dn">' + d.n + tag + '</span><span class="dp">' + f(d.p) + '</span></div>';
+    }).join("");
+    menuGridHtml += '<div class="mcb"><div class="mcb-top"><span class="mcb-name">' + cat + '</span><span class="mcb-cnt">' + items.length + ' dishes</span></div>' + rows + '</div>';
+  });
+
+  var whyHtml = WHY_DATA.map(function(w){
+    return '<div class="wc"><div class="wc-ico" style="background:' + w.bg + '"><i class="ti ' + w.ico + '" style="color:' + w.tc + '"></i></div><h3 class="wc-h">' + w.h + '</h3><p class="wc-p">' + w.p + '</p></div>';
+  }).join("");
+
+  var mcGridHtml = MENU_OPTIONS.map(function(o, i){
+    return '<div class="mci" id="mci' + i + '" onclick="toggleMCI(' + i + ')">'
+      + '<div class="mci-ico" style="background:' + o.bg + '"><i class="ti ' + o.ico + '"></i></div>'
+      + '<div style="flex:1;min-width:0"><div class="mci-name">' + o.n + '</div><div class="mci-p">' + o.p + '</div></div>'
+      + '<div class="mci-chk" id="mch' + i + '"><i class="ti ti-check"></i></div></div>';
+  }).join("");
+
+  return ''
+  + '<nav class="lnav">'
+  +   '<button class="brand" onclick="goLanding()">Ariri</button>'
+  +   '<div class="nav-links">'
+  +     '<a href="#story" class="nl">About</a>'
+  +     '<a href="#menu" class="nl">Menu</a>'
+  +     '<a href="#book" class="nl">Book event</a>'
+  +     '<a href="#footer" class="nl">Contact</a>'
+  +   '</div>'
+  +   '<div class="nav-r">'
+  +     '<button class="btn-c" onclick="goOrder()">Order now <i class="ti ti-arrow-up-right"></i></button>'
+  +     '<button class="btn-h" id="hamBtn" aria-label="Menu"><i class="ti ti-menu-2"></i></button>'
+  +   '</div>'
+  + '</nav>'
+
+  + '<div class="mob" id="mobMenu">'
+  +   '<button class="mob-close" id="mobClose"><i class="ti ti-x" style="font-size:1.4rem"></i></button>'
+  +   '<a class="mob-lnk" href="#story" onclick="closeMob()">About</a>'
+  +   '<a class="mob-lnk" href="#menu" onclick="closeMob()">Menu</a>'
+  +   '<a class="mob-lnk" href="#book" onclick="closeMob()">Book event</a>'
+  +   '<a class="mob-lnk" href="#footer" onclick="closeMob()">Contact</a>'
+  +   '<button class="btn-p" style="margin-top:1rem" onclick="closeMob();goOrder()">Order now <i class="ti ti-arrow-up-right"></i></button>'
+  + '</div>'
+
+  + '<section class="hero" id="top">'
+  +   '<div class="glow g1"></div><div class="glow g2"></div>'
+  +   '<div class="plate-wrap asi" style="animation-delay:.6s">'
+  +     '<div class="plate-sz afl">'
+  +       '<div class="pr" style="inset:-6%;opacity:.45"></div>'
+  +       '<div class="pr" style="inset:-13%;opacity:.2"></div>'
+  +       '<div class="pr" style="inset:-21%;opacity:.1"></div>'
+  +       '<div class="pr" style="inset:-30%;opacity:.05"></div>'
+  +       '<div class="pm"><div class="pi1"></div><div class="pi2"></div><div class="pg"></div><div class="ptg"></div>'
+  +         '<div class="pc"><i class="ti ti-bowl pi-ico"></i><span class="pi-lbl">Ariri Restaurant &amp; Bar</span></div>'
+  +       '</div>'
+  +     '</div>'
+  +   '</div>'
+  +   '<div class="hero-inner">'
+  +     '<h1 class="hl">'
+  +       '<div><span class="wr"><span class="wri bright" style="animation-delay:.3s">The</span></span> <span class="wr"><span class="wri bright" style="animation-delay:.41s">Soul</span></span> <span class="wr"><span class="wri dim" style="animation-delay:.52s">of</span></span></div>'
+  +       '<div><span class="wr"><span class="wri dim" style="animation-delay:.63s">Nigeria</span></span> <span class="wr"><span class="wri dim" style="animation-delay:.74s">in</span></span> <span class="wr"><span class="wri bright" style="animation-delay:.85s">Every</span></span></div>'
+  +       '<div><span class="wr"><span class="wri bright" style="animation-delay:.96s">Plate.</span></span></div>'
+  +     '</h1>'
+  +     '<div class="cta-row afu" style="animation-delay:.9s">'
+  +       '<button class="btn-p" onclick="document.getElementById(\'book\').scrollIntoView({behavior:\'smooth\'})">Book an event <i class="ti ti-calendar"></i></button>'
+  +       '<button class="btn-w" onclick="goOrder()"><i class="ti ti-shopping-cart"></i> Order online</button>'
+  +       '<p class="hero-sub">29 Church Gate Street, Leicester. Dine in, collection or UK delivery.</p>'
+  +     '</div>'
+  +   '</div>'
+  +   '<div class="bstrip afu" style="animation-delay:1.1s">'
+  +     '<div><div class="stn">36+</div><div class="stl">Daily dishes</div></div><div class="std"></div>'
+  +     '<div><div class="stn">50+</div><div class="stl">Events catered</div></div><div class="std"></div>'
+  +     '<div><div class="stn">5+</div><div class="stl">UK cities</div></div><div class="std"></div>'
+  +     '<div><div class="stn">4.9&#9733;</div><div class="stl">Rating</div></div>'
+  +     '<div style="margin-left:auto"><button class="btn-w" style="font-size:.78rem;padding:8px 14px" onclick="window.open(\'https://wa.me/' + WA_NUMBER + '\',\'_blank\')"><i class="ti ti-brand-whatsapp"></i> +44 7405 251346</button></div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="story" id="story">'
+  +   '<div class="sg"></div>'
+  +   '<div class="eyebrow"><i class="ti ti-flame"></i> Our story</div>'
+  +   '<h2 class="story-q">Born from fire, seasoned with love, served with pride.</h2>'
+  +   '<div class="sdiv"></div>'
+  +   '<p class="story-body">Ariri means &ldquo;taste&rdquo; in Igbo &mdash; and that is exactly what we deliver. Our kitchen brings the soul of Nigeria to the heart of Leicester. Every pot is seasoned with tradition, every dish tells a story passed down through generations. From firewood party jollof to slow-cooked egusi &mdash; we cook with intention. Welcome to Ariri.</p>'
+  +   '<div class="story-dets">'
+  +     '<div class="story-det"><i class="ti ti-map-pin"></i> 29 Church Gate Street, Leicester</div>'
+  +     '<div class="story-det"><i class="ti ti-clock"></i> Mon &ndash; Sun 12:00 &ndash; 22:00</div>'
+  +     '<div class="story-det"><i class="ti ti-brand-instagram"></i> @ariri_restaurant_and_bar</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="menu-sec" id="menu">'
+  +   '<p class="sec-eyebrow">What we serve</p>'
+  +   '<h2 class="sec-h">Our menu</h2>'
+  +   '<div class="menu-grid-preview">' + menuGridHtml + '</div>'
+  +   '<p class="menu-note">Menu changes daily. WhatsApp +44 7405 251346 to confirm today&rsquo;s full availability. Swallows served with all soups.</p>'
+  +   '<div style="margin-top:2rem"><button class="ba" style="background:#0C0C0C;padding:12px 24px;font-size:13px" onclick="goOrder()"><i class="ti ti-shopping-cart"></i> Order online now</button></div>'
+  + '</section>'
+
+  + '<section class="book-sec" id="book">'
+  +   '<div class="book-glow"></div>'
+  +   '<div class="book-inner">'
+  +     '<div class="book-cols">'
+  +       '<div>'
+  +         '<p class="sec-eyebrow" style="color:rgba(232,221,208,.35);margin-bottom:.75rem">Catering &amp; events</p>'
+  +         '<h2 class="book-h">Book Ariri for your event.</h2>'
+  +         '<p class="book-sub">Weddings, birthday parties, corporate events, christenings and funerals across the UK. We bring the full Ariri experience to your door for 20 to 500 guests.</p>'
+  +         '<div class="check-item"><i class="ti ti-check"></i> Delivery to any UK city</div>'
+  +         '<div class="check-item"><i class="ti ti-check"></i> Minimum 20 guests</div>'
+  +         '<div class="check-item"><i class="ti ti-check"></i> Book at least 1 week in advance</div>'
+  +         '<div class="check-item"><i class="ti ti-check"></i> Confirmed via WhatsApp within 24hrs</div>'
+  +       '</div>'
+  +       '<div class="form-card">'
+  +         '<div id="bookForm">'
+  +           '<div class="fg"><label class="fl">Event type</label><div class="evt-pills">'
+  +             '<button class="ep on" data-v="Birthday party" onclick="setEvt(this)">Birthday party</button>'
+  +             '<button class="ep" data-v="Wedding" onclick="setEvt(this)">Wedding</button>'
+  +             '<button class="ep" data-v="Corporate event" onclick="setEvt(this)">Corporate</button>'
+  +             '<button class="ep" data-v="Christening" onclick="setEvt(this)">Christening</button>'
+  +             '<button class="ep" data-v="Funeral" onclick="setEvt(this)">Funeral</button>'
+  +             '<button class="ep" data-v="Other" onclick="setEvt(this)">Other</button>'
+  +           '</div></div>'
+  +           '<div class="frow">'
+  +             '<div class="fg" style="margin-bottom:0"><label class="fl" for="evtDate">Event date</label><input type="date" id="evtDate" class="fi-inp"></div>'
+  +             '<div class="fg" style="margin-bottom:0"><label class="fl">Guests</label><div class="gst-pills">'
+  +               '<button class="gp on" data-v="20-50" onclick="setGuest(this)">20-50</button>'
+  +               '<button class="gp" data-v="51-100" onclick="setGuest(this)">51-100</button>'
+  +               '<button class="gp" data-v="101-200" onclick="setGuest(this)">101-200</button>'
+  +               '<button class="gp" data-v="200+" onclick="setGuest(this)">200+</button>'
+  +             '</div></div>'
+  +           '</div>'
+  +           '<div style="margin-bottom:1.35rem"></div>'
+  +           '<div class="fg"><label class="fl" for="evtCity">Delivery city</label><input type="text" id="evtCity" class="fi-inp" placeholder="e.g. Birmingham, London, Manchester..."></div>'
+  +           '<div class="fg"><label class="fl">Menu selection <span style="font-weight:400;text-transform:none;color:rgba(232,221,208,.2);letter-spacing:0">choose all that apply</span></label><div class="mc-grid">' + mcGridHtml + '</div></div>'
+  +           '<div class="frow">'
+  +             '<div class="fg" style="margin-bottom:0"><label class="fl" for="evtName">Your name</label><input type="text" id="evtName" class="fi-inp" placeholder="Full name"></div>'
+  +             '<div class="fg" style="margin-bottom:0"><label class="fl" for="evtPhone">Phone number</label><input type="tel" id="evtPhone" class="fi-inp" placeholder="+44..."></div>'
+  +           '</div>'
+  +           '<div style="margin-bottom:1.35rem"></div>'
+  +           '<div class="fg"><label class="fl" for="evtNotes">Special requests</label><textarea id="evtNotes" class="fi-inp" placeholder="Dietary needs, specific dishes, timing, anything else..."></textarea></div>'
+  +           '<button class="btn-book" onclick="submitBooking()"><i class="ti ti-brand-whatsapp"></i> Send booking request via WhatsApp</button>'
+  +           '<p class="form-note">We confirm all bookings within 24 hours on +44 7405 251346</p>'
+  +         '</div>'
+  +         '<div class="form-ok" id="formOk">'
+  +           '<i class="ti ti-circle-check"></i><h3>Booking request sent!</h3>'
+  +           '<p>Your enquiry has been sent to Ariri via WhatsApp. We will confirm within 24 hours. Thank you!</p>'
+  +           '<button class="btn-p" style="display:inline-flex;margin:1.5rem auto 0" onclick="resetBookingForm()">Make another enquiry</button>'
+  +         '</div>'
+  +       '</div>'
+  +     '</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="why-sec">'
+  +   '<p class="sec-eyebrow" style="color:rgba(232,221,208,.3)">Why choose Ariri</p>'
+  +   '<h2 class="sec-h" style="color:var(--txt)">The difference is in<br><span style="color:rgba(232,221,208,.3)">how we cook.</span></h2>'
+  +   '<div class="why-grid">' + whyHtml + '</div>'
+  + '</section>'
+
+  + '<footer id="footer">'
+  +   '<div class="foot-grid">'
+  +     '<div>'
+  +       '<div class="fbrand">Ariri</div>'
+  +       '<p class="fdesc">Nigerian restaurant &amp; bar. Authentic flavours, bold experience. Serving Leicester and delivering across the UK.</p>'
+  +       '<div class="fcontacts">'
+  +         '<a href="https://wa.me/' + WA_NUMBER + '" class="fc-item" target="_blank"><i class="ti ti-brand-whatsapp"></i> +44 7405 251346</a>'
+  +         '<a href="tel:+447760894647" class="fc-item"><i class="ti ti-phone"></i> +44 7760 894647</a>'
+  +         '<div class="fc-item"><i class="ti ti-map-pin"></i> 29 Church Gate Street, Leicester</div>'
+  +         '<div class="fc-item"><i class="ti ti-clock"></i> Monday &ndash; Sunday 12:00 &ndash; 22:00</div>'
+  +         '<button class="fc-item" onclick="goOwner()"><i class="ti ti-lock"></i> Owner login</button>'
+  +       '</div>'
+  +     '</div>'
+  +     '<div class="foot-col"><h4>Quick links</h4><div class="flinks">'
+  +       '<a href="#story" class="flnk">About us</a><a href="#menu" class="flnk">Full menu</a>'
+  +       '<a href="#book" class="flnk">Book an event</a><a href="https://wa.me/' + WA_NUMBER + '" class="flnk" target="_blank">Order on WhatsApp</a>'
+  +     '</div></div>'
+  +     '<div class="foot-col"><h4>Services</h4><div class="flinks">'
+  +       '<span class="flnk">Dine in</span><span class="flnk">Collection</span><span class="flnk">Bulk delivery</span>'
+  +       '<span class="flnk">Wedding catering</span><span class="flnk">Corporate events</span>'
+  +     '</div></div>'
+  +   '</div>'
+  +   '<div class="foot-btm">'
+  +     '<p class="fcopy">&copy; 2026 Ariri Restaurant &amp; Bar &mdash; 29 Church Gate Street, Leicester</p>'
+  +     '<a href="https://www.instagram.com/ariri_restaurant_and_bar" class="finsta" target="_blank"><i class="ti ti-brand-instagram"></i> @ariri_restaurant_and_bar</a>'
+  +   '</div>'
+  + '</footer>';
+}
+
+function initLanding(){
+  var hamBtn = document.getElementById("hamBtn");
+  var mobMenu = document.getElementById("mobMenu");
+  var mobClose = document.getElementById("mobClose");
+  if (hamBtn) hamBtn.onclick = function(){ mobMenu.classList.add("open"); };
+  if (mobClose) mobClose.onclick = function(){ mobMenu.classList.remove("open"); };
+  window.addEventListener("scroll", function(){
+    var pos = window.scrollY + 100;
+    ["story","menu","book","footer"].forEach(function(id){
+      var el = document.getElementById(id);
+      var lnk = document.querySelector('a[href="#' + id + '"]');
+      if (el && lnk) lnk.classList.toggle("on", pos >= el.offsetTop && pos < el.offsetTop + el.offsetHeight);
+    });
+  }, { passive: true });
+}
+
+function closeMob(){ var m = document.getElementById("mobMenu"); if (m) m.classList.remove("open"); }
+function goLanding(){ S.page = "landing"; render(); window.scrollTo(0,0); }
+function goOrder(){ S.page = "order"; S.oview = "menu"; render(); window.scrollTo(0,0); }
+function goOwner(){ S.page = "owner"; S.ownerAuth = false; render(); window.scrollTo(0,0); }
+
+/* ---- Booking form state/logic ---- */
+function setEvt(btn){
+  document.querySelectorAll(".ep").forEach(function(b){ b.classList.remove("on"); });
+  btn.classList.add("on");
+  S.evtType = btn.dataset.v;
+}
+function setGuest(btn){
+  document.querySelectorAll(".gp").forEach(function(b){ b.classList.remove("on"); });
+  btn.classList.add("on");
+  S.guestRange = btn.dataset.v;
+}
+function toggleMCI(i){
+  var el = document.getElementById("mci" + i);
+  if (S.checkedMenus[i]) { delete S.checkedMenus[i]; el.classList.remove("on"); }
+  else { S.checkedMenus[i] = true; el.classList.add("on"); }
+}
+function submitBooking(){
+  var date = document.getElementById("evtDate").value;
+  var city = document.getElementById("evtCity").value.trim();
+  var name = document.getElementById("evtName").value.trim();
+  var phone = document.getElementById("evtPhone").value.trim();
+  var notes = document.getElementById("evtNotes").value.trim();
+  if (!date || !city || !name){ alert("Please fill in the event date, city and your name."); return; }
+  var sel = [];
+  Object.keys(S.checkedMenus).forEach(function(i){ sel.push(MENU_OPTIONS[i].n); });
+  var menuStr = sel.length > 0 ? sel.join(", ") : "To be discussed";
+  var d = new Date(date);
+  var dateStr = d.toLocaleDateString("en-GB", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+  var nl = String.fromCharCode(10);
+  var msg = "Hi Ariri! I would like to book catering for an event." + nl + nl
+    + "Event type: " + S.evtType + nl
+    + "Date: " + dateStr + nl
+    + "Guests: " + S.guestRange + nl
+    + "City: " + city + nl
+    + "Menu: " + menuStr + nl
+    + "Name: " + name + nl
+    + (phone ? "Phone: " + phone + nl : "")
+    + (notes ? "Notes: " + notes + nl : "")
+    + nl + "Please confirm availability. Thank you!";
+  window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+
+  S.bulkBookings.unshift({
+    id: "#BO-" + String(100 + S.bulkBookings.length + 1),
+    city: city, event: S.evtType, date: dateStr, guests: S.guestRange,
+    items: menuStr, status: "pending"
+  });
+
+  document.getElementById("bookForm").style.display = "none";
+  document.getElementById("formOk").style.display = "block";
+}
+function resetBookingForm(){
+  document.getElementById("bookForm").style.display = "block";
+  document.getElementById("formOk").style.display = "none";
+  document.getElementById("evtDate").value = "";
+  document.getElementById("evtCity").value = "";
+  document.getElementById("evtName").value = "";
+  document.getElementById("evtPhone").value = "";
+  document.getElementById("evtNotes").value = "";
+  S.checkedMenus = {};
+  document.querySelectorAll(".mci").forEach(function(el){ el.classList.remove("on"); });
+  document.querySelectorAll(".ep").forEach(function(b,i){ b.classList.toggle("on", i===0); });
+  document.querySelectorAll(".gp").forEach(function(b,i){ b.classList.toggle("on", i===0); });
+  S.evtType = "Birthday party"; S.guestRange = "20-50";
+}
+
+/* ================= ORDER APP ================= */
+function orderNav(){
+  var cnt = cCount();
+  return '<div class="anav">'
+    + '<button class="abrand" onclick="goLanding()">Ariri <em>&amp;</em> Bar</button>'
+    + '<div class="anav-r">'
+    +   '<button class="bo2" onclick="oGo(\'cart\')"><i class="ti ti-shopping-cart"></i> Cart' + (cnt > 0 ? '<span class="bcnt">' + cnt + '</span>' : '') + '</button>'
+    +   '<button class="bo2" onclick="goOwner()"><i class="ti ti-settings"></i> Owner</button>'
+    +   '<button class="bo2" onclick="goLanding()"><i class="ti ti-home"></i></button>'
+    + '</div>'
+  + '</div>';
+}
+function oGo(v){ S.oview = v; render(); }
+
+function orderBody(){
+  switch (S.oview){
+    case "menu": return orderMenuV();
+    case "item": return orderItemV();
+    case "cart": return orderCartV();
+    case "checkout": return orderCheckV();
+    case "bulk": return orderBulkV();
+    case "done": return orderDoneV();
+    default: return orderMenuV();
+  }
+}
+
+function orderMenuV(){
+  var list = S.cat === "All" ? S.menu : S.menu.filter(function(m){ return m.cat === S.cat; });
+  var catsHtml = CATS.map(function(c){
+    return '<button class="cb' + (S.cat === c ? " on" : "") + '" onclick="setCat(\'' + c + '\')">' + c + '</button>';
+  }).join("");
+  var cardsHtml = list.map(function(m){
+    return '<div class="mc' + (m.avail ? "" : " ua") + '" onclick="openItem(' + m.id + ')">'
+      + '<div class="mc-art">' + dishArt(m.cat, m.id, 96) + '</div>'
+      + '<div class="mc-body"><div class="mc-name">' + m.n + '</div><div class="mc-desc">' + m.d + '</div>'
+      + '<div class="mc-foot"><span class="mc-price">' + f(m.p) + '</span><span class="ab ' + (m.avail ? "y" : "n") + '">' + (m.avail ? "Available" : "Sold out") + '</span></div></div></div>';
+  }).join("");
+  return '<div style="padding:.75rem 1.5rem .5rem"><button class="bwa" onclick="window.open(\'https://wa.me/' + WA_NUMBER + '?text=Hi+Ariri%2C+I+am+not+satisfied+with+something\',\'_blank\')" style="font-size:11px;padding:6px 11px"><i class="ti ti-brand-whatsapp"></i> Not satisfied? Message us directly</button></div>'
+    + '<div class="cats">' + catsHtml + '</div>'
+    + '<div class="mgrid">' + cardsHtml + '</div>'
+    + '<div class="bulk-banner"><div style="display:flex;align-items:center;gap:9px;margin-bottom:.4rem"><i class="ti ti-truck" style="font-size:18px;color:#C4581A"></i><span style="font-size:12px;font-weight:700;color:var(--txt);text-transform:uppercase;letter-spacing:.04em">Bulk &amp; City Delivery</span></div>'
+    + '<p style="font-size:11px;color:rgba(232,221,208,.45);line-height:1.65;margin-bottom:.65rem">Large orders delivered to Birmingham, London, Manchester and more. Weddings, parties, corporate events.</p>'
+    + '<button class="ba" onclick="oGo(\'bulk\')" style="font-size:11px;padding:6px 13px"><i class="ti ti-users"></i> Place bulk order</button></div>';
+}
+function setCat(c){ S.cat = c; render(); }
+
+function openItem(id){
+  var it = itm(id);
+  if (!it || !it.avail) return;
+  S.selId = id; S.custRm = {}; S.custAo = {}; S.custQty = 1;
+  S.oview = "item"; render();
+}
+
+function orderItemV(){
+  var it = itm(S.selId);
+  if (!it) return orderMenuV();
+  var aoT = 0;
+  it.ao.forEach(function(a){ if (S.custAo[a.n]) aoT += a.p; });
+  var line = (it.p + aoT) * S.custQty;
+  var rmHtml = it.rm.map(function(r){
+    var id = "rm" + esc(r);
+    return '<div class="trow"><input type="checkbox" id="' + id + '" onchange="toggleRm(\'' + r + '\',this.checked)"><label for="' + id + '">Remove ' + r + '</label></div>';
+  }).join("");
+  var aoHtml = it.ao.map(function(a){
+    var id = "ao" + esc(a.n);
+    return '<div class="arow"><input type="checkbox" id="' + id + '" onchange="toggleAo(\'' + a.n + '\',' + a.p + ',this.checked)"><label for="' + id + '">' + a.n + '</label><span class="arow-p">+' + f(a.p) + '</span></div>';
+  }).join("");
+  return '<div class="panel">'
+    + '<div class="ph"><span class="pt">' + it.n + '</span><button class="xb" onclick="oGo(\'menu\')"><i class="ti ti-x"></i></button></div>'
+    + '<div class="pimg">' + dishArt(it.cat, it.id, 130) + '</div>'
+    + '<p style="font-size:12px;color:rgba(232,221,208,.45);margin-bottom:1rem;line-height:1.6">' + it.d + ' &middot; <strong style="color:var(--acc2)">' + f(it.p) + '</strong></p>'
+    + (it.rm.length ? '<div class="sec"><span class="sl">Remove ingredients</span>' + rmHtml + '</div>' : '')
+    + (it.ao.length ? '<div class="sec"><span class="sl">Add extras</span>' + aoHtml + '</div>' : '')
+    + '<div class="sec"><span class="sl">Special requests</span><textarea class="inp" id="itemNotes" placeholder="Allergies, spice level, extra sauce..."></textarea></div>'
+    + '<div class="sec"><span class="sl">Quantity</span><div class="qrow"><button class="qb" onclick="changeQty(-1)">&#8722;</button><span class="qv">' + S.custQty + '</span><button class="qb" onclick="changeQty(1)">+</button></div></div>'
+    + '<div class="divider"></div>'
+    + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem"><span style="font-size:12px;color:rgba(232,221,208,.4)">Item total</span><span style="font-size:17px;font-weight:700;color:var(--acc2)">' + f(line) + '</span></div>'
+    + '<button class="ba" style="width:100%;justify-content:center" onclick="addToCart()"><i class="ti ti-shopping-cart"></i> Add to order</button>'
+  + '</div>';
+}
+function toggleRm(r, checked){ S.custRm[r] = checked; }
+function toggleAo(n, p, checked){ if (checked) S.custAo[n] = { n: n, p: p }; else delete S.custAo[n]; }
+function changeQty(d){ S.custQty = Math.max(1, S.custQty + d); render(); }
+
+function addToCart(){
+  var it = itm(S.selId);
+  var notesEl = document.getElementById("itemNotes");
+  var notes = notesEl ? notesEl.value : "";
+  var rm = [];
+  Object.keys(S.custRm).forEach(function(k){ if (S.custRm[k]) rm.push(k); });
+  var ao = [];
+  Object.keys(S.custAo).forEach(function(k){ ao.push(S.custAo[k]); });
+  var aoT = 0; ao.forEach(function(a){ aoT += a.p; });
+  S.cart.push({ id: Date.now(), name: it.n, qty: S.custQty, rm: rm, ao: ao, notes: notes, total: (it.p + aoT) * S.custQty });
+  S.oview = "cart"; render();
+}
+
+function orderCartV(){
+  if (S.cart.length === 0){
+    return '<div class="panel"><div class="ph"><span class="pt">Your order</span><button class="xb" onclick="oGo(\'menu\')"><i class="ti ti-arrow-left"></i></button></div>'
+      + '<div style="text-align:center;padding:2rem 0;color:rgba(232,221,208,.35)"><i class="ti ti-shopping-cart" style="font-size:38px;opacity:.18;display:block;margin-bottom:.75rem"></i><p style="font-size:12px">Your order is empty</p><button class="bo2" onclick="oGo(\'menu\')" style="margin-top:1rem;font-size:11px">Browse menu</button></div></div>';
+  }
+  var rows = S.cart.map(function(ci){
+    var mods = [];
+    if (ci.rm.length) mods.push("Without: " + ci.rm.join(", "));
+    if (ci.ao.length) mods.push("+ " + ci.ao.map(function(a){ return a.n; }).join(", "));
+    if (ci.notes) mods.push("Note: " + ci.notes);
+    return '<div class="ci"><div class="ci-inf"><div class="ci-name">' + ci.qty + '&times; ' + ci.name + '</div><div class="ci-mod">' + (mods.join(" | ") || "No modifications") + '</div></div><span class="ci-price">' + f(ci.total) + '</span><button class="xb" onclick="removeFromCart(' + ci.id + ')" style="font-size:14px"><i class="ti ti-trash"></i></button></div>';
+  }).join("");
+  return '<div class="panel"><div class="ph"><span class="pt">Your order</span><button class="xb" onclick="oGo(\'menu\')"><i class="ti ti-arrow-left"></i></button></div>'
+    + rows
+    + '<div class="tot"><span>Total</span><span>' + f(cTotal()) + '</span></div>'
+    + '<button class="ba" style="width:100%;justify-content:center;margin-top:.9rem" onclick="oGo(\'checkout\')"><i class="ti ti-credit-card"></i> Proceed to checkout</button>'
+    + '<button class="bo2" style="width:100%;justify-content:center;margin-top:7px;font-size:11px" onclick="oGo(\'menu\')"><i class="ti ti-plus"></i> Add more items</button>'
+  + '</div>';
+}
+function removeFromCart(id){ S.cart = S.cart.filter(function(c){ return c.id !== id; }); render(); }
+
+function orderCheckV(){
+  if (S.checkStep === "pay") return orderPayV();
+  var svc = cTotal() * 0.1;
+  var rows = S.cart.map(function(ci){
+    return '<div class="ci"><div class="ci-inf"><div class="ci-name">' + ci.qty + '&times; ' + ci.name + '</div></div><span class="ci-price">' + f(ci.total) + '</span></div>';
+  }).join("");
+  return '<div class="panel"><div class="ph"><span class="pt">Checkout</span><button class="xb" onclick="oGo(\'cart\')"><i class="ti ti-arrow-left"></i></button></div>'
+    + '<div class="sec"><span class="sl">Order type</span><div class="ot-row">'
+    + '<div class="ot' + (S.orderType === "dine-in" ? " sel" : "") + '" onclick="setOrderType(\'dine-in\')"><i class="ti ti-building-store"></i><div class="ot-name">Dine in</div><div class="ot-sub">Eat at Ariri</div></div>'
+    + '<div class="ot' + (S.orderType === "collection" ? " sel" : "") + '" onclick="setOrderType(\'collection\')"><i class="ti ti-package"></i><div class="ot-name">Collection</div><div class="ot-sub">Pick up yourself</div></div>'
+    + '<div class="ot' + (S.orderType === "bulk" ? " sel" : "") + '" onclick="setOrderType(\'bulk\')"><i class="ti ti-truck"></i><div class="ot-name">Bulk delivery</div><div class="ot-sub">City delivery</div></div>'
+    + '</div></div>'
+    + rows
+    + '<div style="display:flex;justify-content:space-between;padding:6px 0;font-size:11px;color:rgba(232,221,208,.35);border-top:1px solid rgba(232,221,208,.07);margin-top:4px"><span>Service (10%)</span><span>' + f(svc) + '</span></div>'
+    + '<div class="tot"><span>Total</span><span>' + f(cTotal() + svc) + '</span></div>'
+    + (S.orderType === "bulk"
+        ? '<button class="ba" style="width:100%;justify-content:center;margin-top:.9rem" onclick="oGo(\'bulk\')"><i class="ti ti-truck"></i> Fill bulk delivery details</button>'
+        : '<button class="ba" style="width:100%;justify-content:center;margin-top:.9rem" onclick="goPay()"><i class="ti ti-credit-card"></i> Continue to payment</button>')
+  + '</div>';
+}
+function setOrderType(t){ S.orderType = t; render(); }
+function goPay(){ S.checkStep = "pay"; render(); }
+
+function orderPayV(){
+  var tot = f(cTotal() * 1.1);
+  var methods = [
+    { v: "apple", n: "Apple Pay", s: "Touch ID or Face ID", ico: "ti-brand-apple" },
+    { v: "google", n: "Google Pay", s: "Quick and secure", ico: "ti-brand-google" },
+    { v: "card", n: "Credit / Debit Card", s: "Visa, Mastercard, Amex", ico: "ti-credit-card" }
+  ];
+  var methodsHtml = methods.map(function(m){
+    return '<div class="po' + (S.payMethod === m.v ? " sel" : "") + '" onclick="setPayMethod(\'' + m.v + '\')">'
+      + '<i class="ti ' + m.ico + ' po-ico"></i><div><div class="po-name">' + m.n + '</div><div class="po-sub">' + m.s + '</div></div>'
+      + (S.payMethod === m.v ? '<i class="ti ti-circle-check" style="margin-left:auto;color:var(--acc)"></i>' : '')
+    + '</div>';
+  }).join("");
+  var cardFields = S.payMethod === "card"
+    ? '<div style="margin-top:.9rem;display:flex;flex-direction:column;gap:7px"><input class="inp" placeholder="Card number"><div style="display:grid;grid-template-columns:1fr 1fr;gap:7px"><input class="inp" placeholder="MM / YY"><input class="inp" placeholder="CVV"></div></div>'
+    : "";
+  var payBtn = S.payMethod
+    ? '<button class="apbtn" onclick="placeOrder()"><i class="ti ' + (S.payMethod === "apple" ? "ti-brand-apple" : S.payMethod === "google" ? "ti-brand-google" : "ti-lock") + '"></i>' + (S.payMethod === "apple" ? "Pay with Apple Pay" : S.payMethod === "google" ? "Pay with Google Pay" : "Pay now - " + tot) + '</button>'
+    : '<p style="font-size:11px;color:rgba(232,221,208,.3);margin-top:.9rem;text-align:center">Select a payment method above</p>';
+  return '<div class="panel"><div class="ph"><span class="pt">Payment</span><button class="xb" onclick="backToReview()"><i class="ti ti-arrow-left"></i></button></div>'
+    + '<p style="font-size:12px;color:rgba(232,221,208,.4);margin-bottom:1rem">Total: <strong style="color:var(--acc2)">' + tot + '</strong></p>'
+    + methodsHtml + cardFields + payBtn
+  + '</div>';
+}
+function setPayMethod(m){ S.payMethod = m; render(); }
+function backToReview(){ S.checkStep = "review"; render(); }
+function placeOrder(){ S.oview = "done"; S.cart = []; S.payMethod = null; render(); }
+
+function orderBulkV(){
+  var events = ["Party","Wedding","Corporate","Funeral","Other"];
+  var evtHtml = events.map(function(e){
+    return '<button class="etag' + (S.evtType.toLowerCase() === e.toLowerCase() ? " on" : "") + '" onclick="setBulkEvt(\'' + e + '\')">' + e + '</button>';
+  }).join("");
+  return '<div class="panel"><div class="ph"><span class="pt">Bulk &amp; City Delivery</span><button class="xb" onclick="oGo(\'menu\')"><i class="ti ti-x"></i></button></div>'
+    + '<p style="font-size:11px;color:rgba(232,221,208,.4);margin-bottom:1.1rem;line-height:1.7">We deliver large orders to cities across the UK. Fill in your details and we will confirm via WhatsApp on <strong style="color:var(--acc2)">+44 7405 251346</strong>.</p>'
+    + '<div class="sec"><span class="sl">Delivery city</span><input class="inp" id="bcity" placeholder="e.g. Birmingham, London, Manchester..." style="margin-top:4px"></div>'
+    + '<div class="sec" style="margin-top:.75rem"><span class="sl">Event type</span><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px">' + evtHtml + '</div></div>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:.75rem">'
+    + '<div><span class="sl">Event date</span><input class="inp" id="bdate" type="date" style="margin-top:4px"></div>'
+    + '<div><span class="sl">No. of guests</span><input class="inp" id="bguests" type="number" placeholder="e.g. 100" style="margin-top:4px"></div></div>'
+    + '<div class="sec" style="margin-top:.75rem"><span class="sl">Dishes and quantities needed</span><textarea class="inp" id="bnotes" placeholder="e.g. Party Jollof x3 trays, Egusi x2, Pounded Yam x5..." style="margin-top:4px"></textarea></div>'
+    + '<div class="divider"></div>'
+    + '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="bwa" onclick="submitBulkOrder()"><i class="ti ti-brand-whatsapp"></i> Send via WhatsApp</button></div>'
+  + '</div>';
+}
+function setBulkEvt(e){ S.evtType = e; render(); }
+function submitBulkOrder(){
+  var city = document.getElementById("bcity").value.trim();
+  var date = document.getElementById("bdate").value;
+  var guests = document.getElementById("bguests").value.trim();
+  var notes = document.getElementById("bnotes").value.trim();
+  if (!city){ alert("Please enter a delivery city."); return; }
+  var nl = String.fromCharCode(10);
+  var msg = "Hi Ariri! I would like to place a bulk order." + nl + nl
+    + "Event type: " + S.evtType + nl
+    + (date ? "Date: " + date + nl : "")
+    + (guests ? "Guests: " + guests + nl : "")
+    + "City: " + city + nl
+    + (notes ? "Items needed: " + notes + nl : "")
+    + nl + "Please confirm pricing and availability. Thank you!";
+  window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+  S.oview = "done"; S.cart = []; render();
+}
+
+function orderDoneV(){
+  return '<div class="succ"><i class="ti ti-circle-check succ-ico"></i><div class="succ-h">Order confirmed!</div>'
+    + '<p class="succ-s">Your food is being prepared. You will receive a WhatsApp confirmation from Ariri shortly.<br>Thank you for your order!</p>'
+    + '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">'
+    + '<button class="bwa" onclick="window.open(\'https://wa.me/' + WA_NUMBER + '\',\'_blank\')"><i class="ti ti-brand-whatsapp"></i> Track on WhatsApp</button>'
+    + '<button class="bo2" onclick="goLanding()" style="font-size:11px"><i class="ti ti-home"></i> Back to home</button>'
+  + '</div></div>';
+}
+
+/* ================= OWNER APP ================= */
+function ownerNav(){
+  return '<div class="anav">'
+    + '<button class="abrand" onclick="goLanding()">Ariri <em>&amp;</em> Bar</button>'
+    + '<div class="anav-r">'
+    +   (S.ownerAuth ? '<button class="bo2" onclick="goOrder()"><i class="ti ti-shopping-cart"></i> Customer view</button>' : '')
+    +   '<button class="bo2" onclick="goLanding()"><i class="ti ti-home"></i></button>'
+    + '</div>'
+  + '</div>';
+}
+function ownerBody(){
+  if (!S.ownerAuth) return ownerLoginV();
+  return '<div class="otabs">'
+    + '<button class="otb' + (S.ownerTab === "menu" ? " on" : "") + '" onclick="setOwnerTab(\'menu\')"><i class="ti ti-tools-kitchen"></i> Menu</button>'
+    + '<button class="otb' + (S.ownerTab === "bulk" ? " on" : "") + '" onclick="setOwnerTab(\'bulk\')"><i class="ti ti-truck"></i> Bulk Orders</button>'
+    + '<button class="otb' + (S.ownerTab === "email" ? " on" : "") + '" onclick="setOwnerTab(\'email\')"><i class="ti ti-mail"></i> Email</button>'
+  + '</div>'
+  + (S.ownerTab === "menu" ? ownerMenuV() : S.ownerTab === "bulk" ? ownerBulkV() : ownerEmailV());
+}
+function ownerLoginV(){
+  return '<div class="panel" style="max-width:320px;margin:3rem auto">'
+    + '<div class="ph"><span class="pt"><i class="ti ti-lock"></i> Owner Access</span></div>'
+    + '<p style="font-size:11px;color:rgba(232,221,208,.38);margin-bottom:1.1rem;line-height:1.6">Sign in to manage your menu, view bulk orders and send customer emails.</p>'
+    + '<input class="inp" type="password" id="ownerPw" placeholder="Password" onkeydown="if(event.key===\'Enter\')ownerAuth()">'
+    + '<p id="ownerErr" style="font-size:11px;color:#E8855A;margin-top:.4rem;display:none">Incorrect password. Hint: try owner123</p>'
+    + '<button class="ba" style="width:100%;justify-content:center;margin-top:.75rem" onclick="ownerAuth()"><i class="ti ti-login"></i> Sign in</button>'
+  + '</div>';
+}
+function ownerAuth(){
+  var pw = document.getElementById("ownerPw").value;
+  if (pw === "owner123"){ S.ownerAuth = true; render(); }
+  else { document.getElementById("ownerErr").style.display = "block"; }
+}
+function setOwnerTab(t){ S.ownerTab = t; S.emailSent = false; render(); }
+
+function ownerMenuV(){
+  var live = S.menu.filter(function(m){ return m.avail; }).length;
+  var html = "";
+  CATS.slice(1).forEach(function(cat){
+    html += '<div class="cat-h">' + cat + '</div>';
+    S.menu.filter(function(m){ return m.cat === cat; }).forEach(function(m){
+      var art = CATEGORY_ART[m.cat] || CATEGORY_ART["Rice & Carbs"];
+      html += '<div class="mr"><div class="mr-ico" style="background:' + art.c2 + '"><i class="ti ' + art.ico + '" style="font-size:15px;color:' + art.c1 + '"></i></div>'
+        + '<div class="mr-inf"><div class="mr-name">' + m.n + '</div><div class="mr-sub">' + f(m.p) + ' - <span style="color:' + (m.avail ? "#5DCE96" : "#E8855A") + ';font-weight:600">' + (m.avail ? "Live" : "Sold out") + '</span></div></div>'
+        + '<label class="tsw"><input type="checkbox" ' + (m.avail ? "checked" : "") + ' onchange="toggleMenuItem(' + m.id + ',this.checked)"><span class="tsl"></span></label></div>';
+    });
+  });
+  return '<div class="panel"><div class="ph"><span class="pt">Menu items</span><span style="font-size:11px;color:rgba(232,221,208,.35)">' + live + '/' + S.menu.length + ' live</span></div>'
+    + '<p style="font-size:11px;color:rgba(232,221,208,.35);margin-bottom:1.1rem;line-height:1.6">Toggle items on or off instantly. Customers see changes in real time.</p>'
+    + html
+  + '</div>';
+}
+function toggleMenuItem(id, checked){
+  S.menu = S.menu.map(function(m){ if (m.id === id) { var c = Object.assign({}, m); c.avail = checked; return c; } return m; });
+  render();
+}
+
+function ownerBulkV(){
+  var html = S.bulkBookings.map(function(o){
+    return '<div class="boc"><div class="boc-top"><span class="boc-id">' + o.id + '</span><span class="boc-s ' + (o.status === "confirmed" ? "c" : "p") + '">' + o.status + '</span></div>'
+      + '<div class="boc-city"><i class="ti ti-map-pin" style="font-size:12px;margin-right:3px"></i>' + o.city + ' - ' + o.event + '</div>'
+      + '<div class="boc-det">' + o.date + ' - ' + o.guests + ' guests<br>' + o.items + '</div></div>';
+  }).join("");
+  return '<div class="panel"><div class="ph"><span class="pt">Bulk &amp; Event Orders</span><span style="font-size:11px;color:rgba(232,221,208,.35)">' + S.bulkBookings.length + ' orders</span></div>'
+    + '<p style="font-size:11px;color:rgba(232,221,208,.35);margin-bottom:1.1rem;line-height:1.6">Incoming bulk and event bookings from the website. Contact each customer to confirm details and pricing.</p>'
+    + html
+    + '<button class="bwa" style="margin-top:.5rem;font-size:11px" onclick="window.open(\'https://wa.me/' + WA_NUMBER + '\',\'_blank\')"><i class="ti ti-brand-whatsapp"></i> Respond via WhatsApp</button>'
+    + '<p class="owner-note">New booking form submissions from the website appear here automatically during this session.</p>'
+  + '</div>';
+}
+
+function ownerEmailV(){
+  var types = [{ v: "promotion", l: "Promotion" }, { v: "event", l: "Event" }, { v: "discount", l: "Discount" }, { v: "opening", l: "Hours update" }, { v: "closure", l: "Closure" }];
+  var typesHtml = types.map(function(t){
+    return '<button class="etag' + (S.emailType === t.v ? " on" : "") + '" onclick="setEmailType(\'' + t.v + '\')">' + t.l + '</button>';
+  }).join("");
+  return '<div class="panel"><div class="ph"><span class="pt">Email campaigns</span></div>'
+    + '<p style="font-size:11px;color:rgba(232,221,208,.35);margin-bottom:1rem;line-height:1.6">Broadcast to all signed-up customers instantly.</p>'
+    + '<div class="sec"><span class="sl">Campaign type</span><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px">' + typesHtml + '</div></div>'
+    + '<div class="sec" style="margin-top:.75rem"><span class="sl">Subject line</span><input class="inp" id="emailSubj" placeholder="e.g. 20% off this weekend - Ariri Restaurant and Bar" style="margin-top:4px"></div>'
+    + '<div class="sec" style="margin-top:.75rem"><span class="sl">Message</span><textarea class="inp" id="emailBody" placeholder="Write your message to customers here..." style="margin-top:4px"></textarea></div>'
+    + (S.emailSent
+        ? '<div class="toast"><i class="ti ti-circle-check"></i> Campaign sent to all customers</div>'
+        : '<button class="ba" style="margin-top:.75rem" onclick="sendEmailCampaign()"><i class="ti ti-send"></i> Send campaign</button>')
+  + '</div>';
+}
+function setEmailType(t){ S.emailType = t; render(); }
+function sendEmailCampaign(){ S.emailSent = true; render(); setTimeout(function(){ S.emailSent = false; render(); }, 3000); }
+
+render();
+
+</script>
+</body>
+</html>
